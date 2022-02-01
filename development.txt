@@ -1,0 +1,18 @@
+// customization 
+ui policy, workflow and flow designer, client script, script include.
+
+deveploment code 
+integration and other development.
+
+client side x server side scripting
+
+client > 
+-current form
+-fields
+-ui elements dom 
+-API
+
+server
+-database
+-Server API
+-Script include
