@@ -16,3 +16,14 @@ server
 -database
 -Server API
 -Script include
+
+version language
+js
+angular
+Jquery
+
+run process script in platform per  background script or plugin explorer , install PDI
+
+access actually info using
+
+getDisplayValue()
