@@ -59,3 +59,11 @@ var text = "Follow,Sloba";
 text.slice(",")
 console.log(text);
 //Result: ["Follow","Sloba"]
+
+//Arredondamento
+var x = Math.round(20.49);
+// Result: Retorna o valor 20
+
+//Arredondamento
+var x = Math.round(20.5);
+// Retorna o valor 21
