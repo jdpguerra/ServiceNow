@@ -1,4 +1,5 @@
 //Code in flow designer
+//https://docs.servicenow.com/pt-BR/bundle/paris-servicenow-platform/page/administer/flow-designer/concept/inline-scripts.html
 /*
 **Access Flow/Action data using the fd_data object. Script must return a value.
 **example: var shortDesc = fd_data.trigger.current.short_description;
