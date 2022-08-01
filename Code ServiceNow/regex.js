@@ -41,10 +41,10 @@ var regex20 = /^[0-9a-z]+$/;
 //Mínimo de 20 caractéres
 var regex21 = /^.{20,}$/;
 //Phone DDI DDD
-var regex22 = /^\+?\d{2}?\s*\(\d{2}\)?\s*\d{4,5}\-?\d{4}$/g/;
-//	Input is not correct (i.e. 45XXXXXXXX)
+var regex22 = /^\+?\d{2}?\s*\(\d{2}\)?\s*\d{4,5}\-?\d{4}$/;
+//Input is not correct (i.e. 45XXXXXXXX)
 var regex23 = /45([0-9]{8})\b/;
-//	Input is not correct (i.e. 4500XXXXXX)
+//Input is not correct (i.e. 4500XXXXXX)
 var regex24 = /4500([0-9]{6})\b/;
 //value is 12345678-K
 var regex25 = /^[0-9]{8}[-][0-9A-Z]{1}$/;
@@ -54,6 +54,20 @@ var regex26 = /100([0-9]{5})\b/;
 var regex27 = /100([0-9]{6})\b/;
 //Input is not correct (i.e. 100XXXXXXX)
 var regex28 = /100([0-9]{7})\b/;
+//BRL
+var regex29 = /^\s*(?:[1-9]\d{0,2}(?:\.\d{3})*|0),\d{2}|[0-9]+$/;
+//HH:mm
+var regex30 = /^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$/;
+//Currency
+var regex31 = /^([1-9]{1}[\d]{0,2}(\.[\d]{3})*(\,[\d]{0,2})?|[1-9]{1}[\d]{0,}(\,[\d]{0,2})?|0(\,[\d]{0,2})?|(\,[\d]{1,2})?)$/;
+//Phone validation
+var regex32 = /\(\d{2,}\) \d{4,}\-\d{4}/;
+//Percent
+var regex33 = /\b(?<![\.|\,])(?:\d|[0-9]\d|100)(?:(?<!100)[\.|\,]\d+)?%/;
+//tax/cpfvalidation /000.000.000-00/;
+var regex44 = /^(\d{3})\.(\d{3})\.(\d{3})-(\d{2})$/;
+
+
 
 // In progress
 
