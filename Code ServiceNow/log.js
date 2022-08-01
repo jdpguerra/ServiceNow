@@ -1,6 +1,9 @@
 //Information doc GlideSystem (gs)
 //https://docs.servicenow.com/pt-BR/bundle/sandiego-platform-administration/page/administer/security/reference/r_ScriptSandboxing.html
 //https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB0752278
+//All logs servicenow
+//https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB0721331
+
 
 
 //Send debugging information to the system log
