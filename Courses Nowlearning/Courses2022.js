@@ -12,3 +12,15 @@ var sad = "https://nowlearning.servicenow.com/lxp?id=learning_course_prev&course
 
 //Service Portal Fundamentals On Demand
 var spf = "https://nowlearning.servicenow.com/lxp?course_id=3d87783fdb558d50454eb0a239961970&id=learning_course_prev";
+
+//Service Portal Advanced On Demand
+var spa = "https://nowlearning.servicenow.com/lxp?course_id=5bd89d2ddb968d10788d25091396198f&id=learning_course_prev";
+
+//Service Mapping Implementation On Demand
+var smi ="https://nowlearning.servicenow.com/lxp?id=learning_course_prev&course_id=0f2cabfd1be48550fa29ebd7b04bcbef";
+
+//IT Service Management (ITSM) Implementation On Demand (Rome)
+var itsmi = "https://nowlearning.servicenow.com/lxp?course_id=5ea0f4f0db8ac55072b7826305961930&id=learning_course_prev";
+
+//Human Resources Service Delivery (HRSD) Implementation On Demand
+var hrsi = "https://nowlearning.servicenow.com/lxp?course_id=349dbfdfdb518d90d08c3ca8f496196d&id=learning_course_prev";
