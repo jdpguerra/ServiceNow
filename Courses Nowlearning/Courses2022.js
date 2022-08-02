@@ -24,3 +24,18 @@ var itsmi = "https://nowlearning.servicenow.com/lxp?course_id=5ea0f4f0db8ac55072
 
 //Human Resources Service Delivery (HRSD) Implementation On Demand
 var hrsi = "https://nowlearning.servicenow.com/lxp?course_id=349dbfdfdb518d90d08c3ca8f496196d&id=learning_course_prev";
+
+//GRC: Integrated Risk Management (IRM) Implementation On Demand
+var grci = "https://nowlearning.servicenow.com/lxp?course_id=89e66c891b9201d0520b6adb234bcb91&id=learning_course_prev";
+
+//Field Service Management (FSM) Implementation On Demand
+var fsmi = "https://nowlearning.servicenow.com/lxp?course_id=f5a88ddc1b35c11032e754e56b4bcb23&id=learning_course_prev";
+
+//Customer Service Management (CSM) Implementation On Demand
+var csmi = "https://nowlearning.servicenow.com/lxp?course_id=99d17ccb1ba3bc10190ca793604bcbe3&id=learning_course_prev";
+
+//Cloud Provisioning and Governance Fundamentals On Demand
+var cpg = "https://nowlearning.servicenow.com/lxp?id=learning_course_prev&course_id=0930eff71b13385075950dc0604bcb35";
+
+//Cloud Provisioning and Governance Advanced On Demand
+var cpga = "https://nowlearning.servicenow.com/lxp?id=learning_course_prev&course_id=c3232b54dbcacd1072b7826305961958";
