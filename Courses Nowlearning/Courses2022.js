@@ -45,3 +45,9 @@ var script = "https://nowlearning.servicenow.com/lxp?id=learning_course_prev&cou
 
 //Application Development Fundamentals On Demand
 var cad = "https://nowlearning.servicenow.com/lxp?course_id=c69e23751b80dd50000d6adb234bcbb7&id=learning_course_prev";
+
+//Using Client Scripts
+var scriptInclude = "https://nowlearning.servicenow.com/lxp?id=learning_course_prev&course_id=9d6220a01b1644d06d6c7550cd4bcb69";
+
+//Welcome to ServiceNow
+var SN = "https://nowlearning.servicenow.com/lxp?id=learning_course_prev&course_id=023708df1bc0119cf95e99b8bd4bcb76";
