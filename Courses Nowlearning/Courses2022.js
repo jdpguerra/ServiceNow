@@ -39,3 +39,9 @@ var cpg = "https://nowlearning.servicenow.com/lxp?id=learning_course_prev&course
 
 //Cloud Provisioning and Governance Advanced On Demand
 var cpga = "https://nowlearning.servicenow.com/lxp?id=learning_course_prev&course_id=c3232b54dbcacd1072b7826305961958";
+
+//Scripting in ServiceNow Fundamentals On Demand (San Diego)
+var script = "https://nowlearning.servicenow.com/lxp?id=learning_course_prev&course_id=15cbcb7adbfec590421266f748961923";
+
+//Application Development Fundamentals On Demand
+var cad = "https://nowlearning.servicenow.com/lxp?course_id=c69e23751b80dd50000d6adb234bcbb7&id=learning_course_prev";
