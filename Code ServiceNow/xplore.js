@@ -6,3 +6,5 @@ var request_Id = "d43645771b38d550d1abda4ce54bcb07";
 var callInclude = new sn_customerservice.CatalogUtils().getFunction(request_Id);
 //print Result consult
 gs.print(callInclude);
+
+
