@@ -27,48 +27,18 @@ userInfo.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         gr.update();
     },
 
-    getAcronymDescription: function() {
-        var userId = this.getParameter('sysparm_userId');
-
-        var grSigla = new GlideRecord('x_ibmfs_csc_v2_tabela_user');
-        grSigla.get(userId);
-        var acronymDescription = grSigla.getValue("description");
-
-        return acronymDescription;
-    },
-    getProcessing: function() {
-        var userId = this.getParameter('sysparm_userId');
-
-        var grSigla = new GlideRecord('x_ibmfs_csc_v2_tabela_user');
-        grSigla.get(userId);
-        var acronymDescription = grSigla.getValue("u_section_coordinator");
-
-        return acronymDescription;
-    },
-    getUnidade: function() {
-        var sysUnid = this.getParameter('sysparm_userId');
-        var grUnidade = new GlideRecord('x_ibmfs_csc_v2_tabela_user');
-        grUnidade.addEncodedQuery('u_mobile_service=true^sys_idIN' + sysUnid);
-        grUnidade.query();
-
-        if (grUnidade.next()) {
-
-            return true;
-        }
-    },
-
-    getMedico: function() {
-        var arrayMedico = [];
+    getMed: function() {
+        var arrayMed = [];
         var siglaName = '';
 
-        var sysMedico = this.getParameter('sysparm_userId');
+        var sysMed = this.getParameter('sysparm_userId');
         var regional = this.getParameter('sysparm_regional');
 
-        var grSigla = new GlideRecord('x_ibmfs_csc_v2_tabela_user');
-        grSigla.addEncodedQuery('sys_id=' + sysMedico + '^active=true^ORDERBYDESCname');
-        grSigla.query();
-        while (grSigla.next()) {
-            siglaName = grSigla.getDisplayValue('name');
+        var gr = new GlideRecord('x_ibmfs_csc_v2_tabela_user');
+        gr.addEncodedQuery('sys_id=' + sysMed + '^active=true^ORDERBYDESCname');
+        gr.query();
+        while (gr.next()) {
+            siglaName = gr.getDisplayValue('name');
         }
 
 
@@ -79,7 +49,7 @@ userInfo.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 
         while (grMedico.next()) {
             var listMedico = grMedico.getUniqueValue();
-            arrayMedico.push({
+            arrayMed.push({
                 medicoid: grMedico.getUniqueValue(),
                 mediconame: grMedico.getValue('nome_medico')
             });
@@ -101,25 +71,6 @@ userInfo.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         return answer.toString();
     },
 
-    getPrazo: function() {
-
-        var sysAcro = this.getParameter('sysparm_userAcro');
-        var sysBrand = this.getParameter('sysparm_userBrand');
-        var sysUnit = this.getParameter('sysparm_userUnit');
-		var nomeSigla = this.getSiglaName(sysAcro);
-		
-	
-        var grPrazo = new GlideRecord('x_ibmfs_csc_v2_tabela_user');
-        grPrazo.addEncodedQuery('active=true^prod_sl_exame=' + nomeSigla + '^id_unid_cd_unidade.u_brand=' + sysBrand + '^id_unid_cd_unidade=' + sysUnit);
-        grPrazo.query();
-        if (grPrazo.next()) {
-
-            var dataPrazo = grPrazo.getValue("prazo_especifico");
-            return dataPrazo;
-        }
-
-
-    },
     getSection: function() {
         var sysSection = this.getParameter('sysparm_userId');
         //var obj = {};
@@ -140,52 +91,6 @@ userInfo.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
             return true;
 
         }
-    },
-
-
-    getProcess: function() {
-
-
-        var procSection = this.getParameter('sysparm_teste');
-
-
-        var grSigla = new GlideRecord('x_ibmfs_csc_v2_tabela_user');
-        grSigla.addEncodedQuery('active=true^sys_id=' + procSection);
-        grSigla.query();
-        //gs.info('helena sigla ' + procSection);
-        if (grSigla.next()) {
-            var dataSigla = grSigla.getValue("section");
-
-        }
-
-
-        var grPrazo = new GlideRecord('x_ibmfs_csc_v2_tabela_user');
-        grPrazo.addEncodedQuery('sys_id=' + dataSigla + '^u_active=true');
-
-        grPrazo.query();
-
-        if (grPrazo.next()) {
-
-            var dataPrazo = grPrazo.getUniqueValue();
-
-
-            return dataPrazo;
-        }
-
-    },
-
-    getRefQual: function(section) {
-        var sys_id = [];
-
-        var grSigla = new GlideRecord('x_ibmfs_csc_v2_tabela_user');
-        grSigla.addEncodedQuery('active=true^section=' + section);
-        grSigla.query();
-
-        while (grSigla.next()) {
-            sys_id.push(grSigla.getUniqueValue());
-        }
-        return sys_id.toString();
-
     },
 
     getAllUnits: function() {
@@ -214,36 +119,6 @@ userInfo.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         }
 
 
-    },
-
-    getProdNoExam: function() {
-        var userId = this.getParameter('sysparm_userId');
-
-        var grSigla = new GlideRecord('x_ibmfs_csc_v2_tabela_user');
-        grSigla.get(userId);
-        var ProdNoExam = grSigla.getValue("prod_no_exame");
-
-        return ProdNoExam;
-    },
-
-    informaPrazo: function(acron, unity) {
-        var acronId = this.getParameter('sysparm_acron') || acron;
-		var acroName = this.getSiglaName(acronId);
-        var secId = this.getParameter('sysparm_sec'); // || unity;
-        var grXICV2SRP = new GlideRecord('x_ibmfs_csc_v2_tabela_user');
-        grXICV2SRP.addEncodedQuery('name=' + acroName + '^id_seca_cd_secao=' + secId + '^ORDERBYname');
-        grXICV2SRP.query();
-        if(grXICV2SRP.next()) {
-            var przo = grXICV2SRP.getDisplayValue('id_przo_cd_prazo_padrao');
-        }
-        return przo;
-    },
-
-    getSiglaName: function(sigla) {
-        var grs = new GlideRecord('x_ibmfs_csc_v2_tabela_user');
-        grs.get(sigla);
-        var acron = grs.getValue('name');
-        return acron;
     },
 
     type: 'userInfo'
