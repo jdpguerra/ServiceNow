@@ -6,8 +6,8 @@
     },
     "action": "saveWidget",
     "tableName": "sp_widget",
-    "name": "carousel_2",
-    "sys_id": "9913419797911110e6feb846f053af14",
+    "name": "guerra",
+    "sys_id": "97cbc19f97911110e6feb846f053afde",
     "widget": {
         "template": {
             "sys_mandatory": false,
@@ -17,13 +17,13 @@
             "sys_readonly": false,
             "type": "html_template",
             "mandatory": false,
-            "displayValue": "<div class=\"pull-in\">\n  <uib-carousel interval=\"options.interval\">\n    <uib-slide ng-repeat=\"slide in ::data.slides\" active=\"slide.active\">\n      <div class=\"container\">\n        <a href=\"{{::slide.url}}\" title=\"${Open carousel item}: {{::slide.name}}\">\n          <img ng-src=\"{{::slide.background}}\" style=\"margin:auto; width:100%;\" role=\"presentation\">\n        </a>\n      </div>\n    </uib-slide>\n  </uib-carousel>\n</div>",
+            "displayValue": "<div>\r\n<!-- your widget template -->\r\n</div>",
             "readonly": false,
             "hint": "",
             "name": "template",
             "attributes": {},
             "choice": 0,
-            "value": "<div class=\"pull-in\">\n  <uib-carousel interval=\"options.interval\">\n    <uib-slide ng-repeat=\"slide in ::data.slides\" active=\"slide.active\">\n      <div class=\"container\">\n        <a href=\"{{::slide.url}}\" title=\"${Open carousel item}: {{::slide.name}}\">\n          <img ng-src=\"{{::slide.background}}\" style=\"margin:auto; width:100%;\" role=\"presentation\">\n        </a>\n      </div>\n    </uib-slide>\n  </uib-carousel>\n</div>",
+            "value": "<div>\r\n<!-- your widget template -->\r\n</div>",
             "max_length": 65000,
             "ed": {
                 "name": "template"
@@ -81,7 +81,7 @@
             "sys_readonly": false,
             "type": "script",
             "mandatory": false,
-            "displayValue": "function link(scope, element, attrs, controller) {\r  \r}",
+            "displayValue": "function link(scope, element, attrs, controller) {\r\n  \r\n}",
             "readonly": false,
             "hint": "",
             "name": "link",
@@ -89,7 +89,7 @@
                 "client_script": "true"
             },
             "choice": 0,
-            "value": "function link(scope, element, attrs, controller) {\r  \r}",
+            "value": "function link(scope, element, attrs, controller) {\r\n  \r\n}",
             "max_length": 65000,
             "ed": {
                 "name": "link"
@@ -165,13 +165,13 @@
             "sys_readonly": false,
             "type": "script",
             "mandatory": false,
-            "displayValue": "data.slides = $sp.getRelatedList('sp_carousel_slide','carousel');",
+            "displayValue": "(function() {\r\n  /* populate the 'data' object */\r\n  /* e.g., data.table = $sp.getValue('table'); */\r\n\r\n})();",
             "readonly": false,
             "hint": "",
             "name": "script",
             "attributes": {},
             "choice": 0,
-            "value": "data.slides = $sp.getRelatedList('sp_carousel_slide','carousel');",
+            "value": "(function() {\r\n  /* populate the 'data' object */\r\n  /* e.g., data.table = $sp.getValue('table'); */\r\n\r\n})();",
             "max_length": 65000,
             "ed": {
                 "name": "script"
@@ -260,7 +260,7 @@
             "sys_readonly": false,
             "type": "script",
             "mandatory": false,
-            "displayValue": "api.controller=function() {\r  /* widget controller */\r  var c = this;\r};",
+            "displayValue": "api.controller=function() {\r\n  /* widget controller */\r\n  var c = this;\r\n};",
             "readonly": false,
             "hint": "",
             "name": "client_script",
@@ -268,7 +268,7 @@
                 "client_script": "true"
             },
             "choice": 0,
-            "value": "api.controller=function() {\r  /* widget controller */\r  var c = this;\r};",
+            "value": "api.controller=function() {\r\n  /* widget controller */\r\n  var c = this;\r\n};",
             "max_length": 8000,
             "ed": {
                 "name": "client_script"
@@ -283,7 +283,7 @@
             "sys_readonly": false,
             "type": "table_name",
             "mandatory": true,
-            "displayValue": "sp_instance_carousel",
+            "displayValue": "sp_instance",
             "readonly": false,
             "hint": "",
             "name": "data_table",
@@ -293,7 +293,7 @@
             },
             "choice": 0,
             "choices": [],
-            "value": "sp_instance_carousel",
+            "value": "sp_instance",
             "max_length": 80,
             "ed": {
                 "name": "data_table"
@@ -307,13 +307,13 @@
             "sys_readonly": false,
             "type": "translated_field",
             "mandatory": true,
-            "displayValue": "carousel_2",
+            "displayValue": "guerra",
             "readonly": false,
             "hint": "",
             "name": "name",
             "attributes": {},
             "choice": 0,
-            "value": "carousel_2",
+            "value": "guerra",
             "max_length": 40,
             "ed": {
                 "name": "name"
@@ -361,7 +361,7 @@
             "sys_readonly": false,
             "type": "string",
             "mandatory": false,
-            "displayValue": "carousel_2",
+            "displayValue": "",
             "readonly": false,
             "hint": "Identifier for $sp.embedWidget()",
             "name": "id",
@@ -369,7 +369,7 @@
                 "edge_encryption_enabled": "true"
             },
             "choice": 0,
-            "value": "carousel_2",
+            "value": "",
             "max_length": 40,
             "ed": {
                 "name": "id"
@@ -384,7 +384,7 @@
             "sys_readonly": false,
             "type": "field_list",
             "mandatory": false,
-            "displayValue": "interval",
+            "displayValue": "",
             "readonly": false,
             "hint": "",
             "name": "field_list",
@@ -392,10 +392,10 @@
                 "is_multi_text": "false"
             },
             "choice": 0,
-            "value": "interval",
+            "value": "",
             "max_length": 1000,
             "ed": {
-                "dependent_value": "sp_instance_carousel",
+                "dependent_value": "sp_instance",
                 "name": "field_list"
             }
         },

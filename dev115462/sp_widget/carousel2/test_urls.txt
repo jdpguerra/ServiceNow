@@ -1,3 +1,0 @@
-https://dev115462.service-now.com/$sp.do?id=sp-preview&sys_id=9913419797911110e6feb846f053af14
-https://dev115462.service-now.com/sp_config?id=carousel_2
-https://dev115462.service-now.com/sp?id=carousel_2
