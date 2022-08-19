@@ -1,0 +1,425 @@
+{
+    "instance": {
+        "name": "dev115462",
+        "url": "https://dev115462.service-now.com",
+        "g_ck": "b3c0cd5797111110e6feb846f053afa488be687d988cb9443547f76919aaeef1513394e9"
+    },
+    "action": "saveWidget",
+    "tableName": "sp_widget",
+    "name": "carousel_2",
+    "sys_id": "9913419797911110e6feb846f053af14",
+    "widget": {
+        "template": {
+            "sys_mandatory": false,
+            "visible": true,
+            "dbType": -1,
+            "label": "Body HTML template",
+            "sys_readonly": false,
+            "type": "html_template",
+            "mandatory": false,
+            "displayValue": "<div class=\"pull-in\">\n  <uib-carousel interval=\"options.interval\">\n    <uib-slide ng-repeat=\"slide in ::data.slides\" active=\"slide.active\">\n      <div class=\"container\">\n        <a href=\"{{::slide.url}}\" title=\"${Open carousel item}: {{::slide.name}}\">\n          <img ng-src=\"{{::slide.background}}\" style=\"margin:auto; width:100%;\" role=\"presentation\">\n        </a>\n      </div>\n    </uib-slide>\n  </uib-carousel>\n</div>",
+            "readonly": false,
+            "hint": "",
+            "name": "template",
+            "attributes": {},
+            "choice": 0,
+            "value": "<div class=\"pull-in\">\n  <uib-carousel interval=\"options.interval\">\n    <uib-slide ng-repeat=\"slide in ::data.slides\" active=\"slide.active\">\n      <div class=\"container\">\n        <a href=\"{{::slide.url}}\" title=\"${Open carousel item}: {{::slide.name}}\">\n          <img ng-src=\"{{::slide.background}}\" style=\"margin:auto; width:100%;\" role=\"presentation\">\n        </a>\n      </div>\n    </uib-slide>\n  </uib-carousel>\n</div>",
+            "max_length": 65000,
+            "ed": {
+                "name": "template"
+            }
+        },
+        "css": {
+            "sys_mandatory": false,
+            "visible": true,
+            "dbType": -1,
+            "label": "CSS",
+            "sys_readonly": false,
+            "type": "css",
+            "mandatory": false,
+            "displayValue": "",
+            "readonly": false,
+            "hint": "",
+            "name": "css",
+            "attributes": {},
+            "choice": 0,
+            "value": "",
+            "max_length": 8000,
+            "ed": {
+                "name": "css"
+            }
+        },
+        "roles": {
+            "sys_mandatory": false,
+            "visible": true,
+            "dbType": 12,
+            "label": "Roles",
+            "sys_readonly": false,
+            "type": "user_roles",
+            "mandatory": false,
+            "displayValue": "",
+            "readonly": false,
+            "hint": "",
+            "name": "roles",
+            "attributes": {
+                "no_truncate": "true",
+                "update_exempt": "true",
+                "record_watcher_blacklist": "true"
+            },
+            "choice": 0,
+            "value": "",
+            "max_length": 255,
+            "ed": {
+                "name": "roles"
+            }
+        },
+        "link": {
+            "sys_mandatory": false,
+            "visible": true,
+            "dbType": -1,
+            "label": "Link",
+            "sys_readonly": false,
+            "type": "script",
+            "mandatory": false,
+            "displayValue": "function link(scope, element, attrs, controller) {\r  \r}",
+            "readonly": false,
+            "hint": "",
+            "name": "link",
+            "attributes": {
+                "client_script": "true"
+            },
+            "choice": 0,
+            "value": "function link(scope, element, attrs, controller) {\r  \r}",
+            "max_length": 65000,
+            "ed": {
+                "name": "link"
+            }
+        },
+        "description": {
+            "sys_mandatory": false,
+            "visible": true,
+            "dbType": -1,
+            "label": "Description",
+            "sys_readonly": false,
+            "type": "string",
+            "mandatory": false,
+            "displayValue": "",
+            "readonly": false,
+            "hint": "Defines what the widget does",
+            "name": "description",
+            "attributes": {
+                "edge_encryption_enabled": "true"
+            },
+            "choice": 0,
+            "value": "",
+            "max_length": 300,
+            "ed": {
+                "name": "description"
+            }
+        },
+        "demo_data": {
+            "sys_mandatory": false,
+            "visible": true,
+            "dbType": -1,
+            "label": "Demo data",
+            "sys_readonly": false,
+            "type": "json",
+            "mandatory": false,
+            "displayValue": "",
+            "readonly": false,
+            "hint": "",
+            "name": "demo_data",
+            "attributes": {},
+            "choice": 0,
+            "value": "",
+            "max_length": 8000,
+            "ed": {
+                "name": "demo_data"
+            }
+        },
+        "option_schema": {
+            "sys_mandatory": false,
+            "visible": true,
+            "dbType": -1,
+            "label": "Option schema",
+            "sys_readonly": false,
+            "type": "json",
+            "mandatory": false,
+            "displayValue": "",
+            "readonly": false,
+            "hint": "",
+            "name": "option_schema",
+            "attributes": {},
+            "choice": 0,
+            "value": "",
+            "max_length": 8000,
+            "ed": {
+                "name": "option_schema"
+            }
+        },
+        "script": {
+            "sys_mandatory": false,
+            "visible": true,
+            "dbType": -1,
+            "label": "Server script",
+            "sys_readonly": false,
+            "type": "script",
+            "mandatory": false,
+            "displayValue": "data.slides = $sp.getRelatedList('sp_carousel_slide','carousel');",
+            "readonly": false,
+            "hint": "",
+            "name": "script",
+            "attributes": {},
+            "choice": 0,
+            "value": "data.slides = $sp.getRelatedList('sp_carousel_slide','carousel');",
+            "max_length": 65000,
+            "ed": {
+                "name": "script"
+            }
+        },
+        "has_preview": {
+            "sys_mandatory": false,
+            "visible": true,
+            "dbType": -7,
+            "label": "Has preview",
+            "sys_readonly": false,
+            "type": "boolean",
+            "mandatory": false,
+            "displayValue": "false",
+            "readonly": false,
+            "hint": "Defines whether preview data is available",
+            "name": "has_preview",
+            "attributes": {},
+            "choice": 0,
+            "value": "false",
+            "max_length": 40,
+            "ed": {
+                "name": "has_preview"
+            }
+        },
+        "public": {
+            "sys_mandatory": false,
+            "visible": true,
+            "dbType": -7,
+            "label": "Public",
+            "sys_readonly": false,
+            "type": "boolean",
+            "mandatory": false,
+            "displayValue": "false",
+            "readonly": false,
+            "hint": "Widget publicly available to unauthenticated users",
+            "name": "public",
+            "attributes": {
+                "update_exempt": "true"
+            },
+            "choice": 0,
+            "value": "false",
+            "max_length": 40,
+            "ed": {
+                "name": "public"
+            }
+        },
+        "docs": {
+            "sys_mandatory": false,
+            "visible": true,
+            "table_attributes": {
+                "update_synch": "true",
+                "synch_attachments": "true"
+            },
+            "dbType": 12,
+            "label": "Docs",
+            "sys_readonly": false,
+            "type": "reference",
+            "mandatory": false,
+            "refTable": "sp_documentation",
+            "reference_type": "table",
+            "displayValue": "",
+            "readonly": false,
+            "hint": "",
+            "name": "docs",
+            "attributes": {
+                "encode_utf8": "false"
+            },
+            "reference_key": "sys_id",
+            "readonlyClickthrough": false,
+            "choice": 0,
+            "value": "",
+            "max_length": 32,
+            "ed": {
+                "reference": "sp_documentation",
+                "searchField": "title",
+                "defaultOperator": "STARTSWITH",
+                "name": "docs"
+            }
+        },
+        "client_script": {
+            "sys_mandatory": false,
+            "visible": true,
+            "dbType": -1,
+            "label": "Client controller",
+            "sys_readonly": false,
+            "type": "script",
+            "mandatory": false,
+            "displayValue": "api.controller=function() {\r  /* widget controller */\r  var c = this;\r};",
+            "readonly": false,
+            "hint": "",
+            "name": "client_script",
+            "attributes": {
+                "client_script": "true"
+            },
+            "choice": 0,
+            "value": "api.controller=function() {\r  /* widget controller */\r  var c = this;\r};",
+            "max_length": 8000,
+            "ed": {
+                "name": "client_script"
+            }
+        },
+        "data_table": {
+            "sys_mandatory": true,
+            "visible": true,
+            "dbType": 12,
+            "default_value": "sp_instance",
+            "label": "Data table",
+            "sys_readonly": false,
+            "type": "table_name",
+            "mandatory": true,
+            "displayValue": "sp_instance_carousel",
+            "readonly": false,
+            "hint": "",
+            "name": "data_table",
+            "attributes": {
+                "base_table": "sp_instance",
+                "base_start": "true"
+            },
+            "choice": 0,
+            "choices": [],
+            "value": "sp_instance_carousel",
+            "max_length": 80,
+            "ed": {
+                "name": "data_table"
+            }
+        },
+        "name": {
+            "sys_mandatory": true,
+            "visible": true,
+            "dbType": 12,
+            "label": "Name",
+            "sys_readonly": false,
+            "type": "translated_field",
+            "mandatory": true,
+            "displayValue": "carousel_2",
+            "readonly": false,
+            "hint": "",
+            "name": "name",
+            "attributes": {},
+            "choice": 0,
+            "value": "carousel_2",
+            "max_length": 40,
+            "ed": {
+                "name": "name"
+            }
+        },
+        "sys_scope": {
+            "sys_mandatory": false,
+            "visible": true,
+            "table_attributes": {
+                "metadata_link_exempt": "true"
+            },
+            "dbType": 12,
+            "label": "Application",
+            "sys_readonly": true,
+            "type": "reference",
+            "mandatory": false,
+            "refTable": "sys_scope",
+            "reference_type": "table",
+            "displayValue": "Global",
+            "readonly": true,
+            "hint": "Application containing this record",
+            "name": "sys_scope",
+            "attributes": {
+                "list_force_default": "true",
+                "readonly_clickthrough": "true",
+                "ignore_filter_on_new": "true"
+            },
+            "reference_key": "sys_id",
+            "readonlyClickthrough": true,
+            "choice": 0,
+            "value": "global",
+            "max_length": 32,
+            "ed": {
+                "reference": "sys_scope",
+                "searchField": "name",
+                "defaultOperator": "STARTSWITH",
+                "name": "sys_scope"
+            }
+        },
+        "id": {
+            "sys_mandatory": false,
+            "visible": true,
+            "dbType": 12,
+            "label": "ID",
+            "sys_readonly": false,
+            "type": "string",
+            "mandatory": false,
+            "displayValue": "carousel_2",
+            "readonly": false,
+            "hint": "Identifier for $sp.embedWidget()",
+            "name": "id",
+            "attributes": {
+                "edge_encryption_enabled": "true"
+            },
+            "choice": 0,
+            "value": "carousel_2",
+            "max_length": 40,
+            "ed": {
+                "name": "id"
+            }
+        },
+        "field_list": {
+            "sys_mandatory": false,
+            "visible": true,
+            "dependentField": "data_table",
+            "dbType": -1,
+            "label": "Fields",
+            "sys_readonly": false,
+            "type": "field_list",
+            "mandatory": false,
+            "displayValue": "interval",
+            "readonly": false,
+            "hint": "",
+            "name": "field_list",
+            "attributes": {
+                "is_multi_text": "false"
+            },
+            "choice": 0,
+            "value": "interval",
+            "max_length": 1000,
+            "ed": {
+                "dependent_value": "sp_instance_carousel",
+                "name": "field_list"
+            }
+        },
+        "controller_as": {
+            "sys_mandatory": false,
+            "visible": true,
+            "dbType": 12,
+            "label": "controllerAs",
+            "sys_readonly": false,
+            "type": "string",
+            "mandatory": false,
+            "displayValue": "c",
+            "readonly": false,
+            "hint": "Identifier name for a reference to the controller in the directive's scope",
+            "name": "controller_as",
+            "attributes": {
+                "edge_encryption_enabled": "true"
+            },
+            "choice": 0,
+            "value": "c",
+            "max_length": 100,
+            "ed": {
+                "name": "controller_as"
+            }
+        }
+    }
+}
