@@ -47,7 +47,7 @@
         
         var BoEmail = email.body_text;
         var entities = BoEmail.split("Entities:")[1];
-        entities = entities.split("[SOC ACCENTURE]")[0];
+        entities = entities.split("[SOC ]")[0];
         entities = entities.trim();
         entities = entities.replace(/(\r\n|\n|\r)/gm, "");
         
