@@ -69,3 +69,26 @@ function onChange(control, oldValue, newValue, isLoading) {
 
 
 }
+
+//Phone validation
+function onChange(control, oldValue, newValue, isLoading) {
+    if (isLoading || newValue == '') {
+        return;
+    }
+    function removeEspecialDigits(phone) {
+        phone = phone.replace(/\D/gim, '');
+        return phone;
+    }
+    var phone = removeEspecialDigits(newValue);
+    var formattedPhone;
+    if (phone.length == 10) { // (xx) xxxxx-xxxx
+        formattedPhone = '(' + phone.slice(0, 2) + ') ' + phone.slice(2, 6) + '-' + phone.slice(6,10);
+        g_form.setValue('contact_mobile_phone', formattedPhone);
+    } else if (phone.length == 11) { // (xx) xxxx-xxxx
+        formattedPhone = '(' + phone.slice(0, 2) + ') ' + phone.slice(2, 7) + '-' + phone.slice(7,11);
+        g_form.setValue('contact_mobile_phone', formattedPhone);
+    } else {
+        g_form.clearValue('contact_mobile_phone');
+        g_form.showFieldMsg('contact_mobile_phone','Número inválido', 'error');
+    }
+}
