@@ -23,3 +23,6 @@
 
 //navigation table empty info
 //incident.filter
+
+//filter list readonly
+//&sysparm_fixed_query=active=true
