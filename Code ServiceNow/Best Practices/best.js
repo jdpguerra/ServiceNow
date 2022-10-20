@@ -77,3 +77,6 @@ do not use "new JSON().encode" & "answer.evalJSON "instead use JSON.stringify(an
 Each 'if' statement should have braces enclosed
 Before calling function, check whether function parameter for null value
  */
+
+//Notification
+//https://www.servicenow.com/community/now-platform-articles/how-servicenow-builds-recipients-lists-for-email-notifications/ta-p/2317854
