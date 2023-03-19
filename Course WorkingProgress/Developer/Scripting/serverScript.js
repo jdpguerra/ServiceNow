@@ -46,3 +46,69 @@ if(current.u_requested_for.email == "beth.anglin@example.com"){
 //Glide system
 //URL > https://developer.servicenow.com/dev.do#!/reference/api/tokyo/server/c_GlideSystemScopedAPI
 gs.info ("Teste mensagem de log");
+
+//GlideRecord
+// URL > https://developer.servicenow.com/dev.do#!/reference/api/tokyo/server/c_GlideRecordScopedAPI
+
+//Example coded:
+// 1. Create an object to store rows from a table
+var myObj = new GlideRecord('table_name');
+
+// 2. Build query
+myObj.addQuery('field_name','operator','value');
+myObj.addQuery('field_name','operator','value');
+
+// 3. Execute query 
+myObj.query();
+
+// 4. Process returned records
+while(myObj.next()){
+  //Logic you want to execute.  
+  //Use myObj.field_name to reference record fields
+}
+//Query
+//Numbers: =, !=, >, >=, <, <=
+//Strings: =, !=, STARTSWITH, ENDSWITH, CONTAINS, DOES NOT CONTAIN, IN, NOT IN, INSTANCEOF
+
+//While
+// iterate through all records in the GlideRecord and set the Priority field value to 4 (low priority).
+// update the record in the database
+while(myObj.next()){
+  myObj.priority = 4;
+  myObj.update(); 
+}
+//IF
+// Set the Priority field value to 4 (low priority) for the first record in the GlideRecord
+// update the record in the database
+if(myObj.next()){
+  myObj.priority = 4;
+  myObj.update(); 
+}
+//Update Multiple
+// When using updateMultiple(), use the setValue() method.  
+// Using myObj.priority = 4 may return unexpected results.
+myObj.setValue('priority',4);
+myObj.updateMultiple();
+
+//About (update)
+//URL > https://developer.servicenow.com/dev.do#!/reference/api/tokyo/server/no-namespace/c_GlideRecordScopedAPI#r_ScopedGlideRecordUpdateMultiple
+
+//Counting records
+//GlideAgregate
+// If you need to know the row count for a query on a production instance do this
+var count = new GlideAggregate('x_snc_needit_needit'); 
+count.addAggregate('COUNT'); 
+count.query(); 
+var recs = 0; 
+  if (count.next()){ 
+    recs = count.getAggregate('COUNT');
+  }
+gs.info("Returned number of rows = " +recs);
+
+// Do not do this on a production instance. 
+var myObj = new GlideRecord('x_snc_needit_needit');
+myObj.query();
+gs.info("Returned record count = " + myObj.getRowCount());
+
+//GlideDateTime
+//URL > https://developer.servicenow.com/dev.do#!/reference/api/tokyo/server/c_APIRef
