@@ -10,3 +10,4 @@ for (var x = 0; x < fields.length; x++) {
 
 //Other code
 g_form.setVariablesReadOnly(true);
+

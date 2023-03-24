@@ -1,0 +1,26 @@
+<div class="panel b" ng-if="data.showWidget">
+    <div class="panel-heading bg-primary">${Actions}</div>
+    <div class="panel-body">
+      <button type="button" class="btn btn-success btn-block" ng-click="c.openModalReopen()" ng-if="data.showReopen">${Reopen Requisição}</button>
+      <button type="button" class="btn btn-success btn-block" ng-click="c.uiAction('close')" ng-if="data.showClose">${Close Requisição}</button>
+      <div ng-if="data.response1" class="alert alert-info">{{::data.response1}}</div>
+    </div>
+   </div>
+   
+   <script type="text/ng-template" id="modalTemplateReopen1">
+       <div class="panel panel-default">
+           <div class="panel-heading">
+
+            <!-- Properties na tabela sys_ui_message -->
+               <h4 class="panel-title">${Please enter a comment when reopening an ritm}</h4>
+             </div>
+         <div class="panel-body wrapper-xl">
+         <form name="modalTemplateReopen" ng-submit="c.uiAction('reopen')">
+           <div class="form-group">
+             <textarea required sp-autosize="true" ng-required="true" ng-model="data.reopenComments" id="reopenComments" placeholder="Comments required" class="form-control ng-pristine ng-valid ng-scope ng-empty ng-touched" aria-invalid="false" style="overflow: hidden; word-wrap: break-word; resize: horizontal;"></textarea>
+           </div>
+           <input class="btn btn-primary" type="submit" />
+         </form>
+       </div>
+     </div>
+   </script>
