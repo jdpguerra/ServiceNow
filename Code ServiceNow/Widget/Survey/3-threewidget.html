@@ -1,0 +1,138 @@
+.panel.template {
+    margin-bottom: 0;
+  }
+  
+  .panel-body {
+    margin-bottom: 20px;
+  }
+  
+  p {
+    margin-bottom: 5px;
+    color: $text-muted;
+  }
+  
+  h4 {
+    margin-top: 0;
+    font-size: 1.6rem;
+  }
+  
+  .evaluation-value {
+    font-size: 1.8rem;
+  }
+  
+  .rating {
+    margin: auto;
+    display: table;
+  
+    > input {
+      display: none;
+    }
+  
+    > label {
+      margin: 0 0 -2px 0;
+      float: right;
+  
+      &:before {
+        content: "\e007";
+        margin: 0 2px;
+        display: inline-block;
+        color: #ccc;
+        font-size: 2.6rem;
+        font-family: 'Glyphicons Halflings';
+        transition: transform 0.2s;
+      }
+  
+      &:hover:before {
+        transform: scale(1.3, 1.3);
+      }
+    }
+  
+    > input:checked ~ label:before,
+    &:not(:checked) > label:hover:before,
+    &:not(:checked) > label:hover ~ label:before {
+      content: "\e006"; 
+      color: #FFCB00;
+      cursor: pointer;
+    }
+  }
+  
+  .improvements {
+    .compliment {
+      margin: auto auto 20px auto;
+      width: 100%;
+      display: table;
+    }
+  
+    .form-group {
+      margin: 0 auto;
+      padding-top: 15px;
+      width: calc(100% - 10px);
+      clear: both;
+      text-align: left;
+    }
+  
+    textarea {
+      margin: auto;
+      max-width: 230px;
+    }
+  
+    .improvement-checkbox {
+      position: absolute;
+      opacity: 0;
+  
+      & + .improvement-option {
+        padding: 8px 12px;
+        margin: 4px;
+        //display: inline-block;
+        position: relative;
+        text-align:center;
+        border: 1px solid #ccc;
+        border-radius: $button-border-radius;
+        font-size: 1.2rem;
+        cursor: pointer;
+        //Added new value
+        min-width: 100px;
+      }
+  
+      &:hover + .improvement-option,
+      &:checked + .improvement-option {
+        background: $brand-primary;
+        color: #fff;
+        border-color: $brand-primary;
+        font-weight: 500;
+      }
+    }
+  
+    button {
+      margin: 30px auto 0 auto;
+      display: table !important;
+    }
+  }
+  
+  hr {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  
+  .error {
+    margin: 15px 0 0 5px;
+    width: 100%;
+    display: inline-block;
+    color: $brand-danger;
+    font-size: 1.2rem;
+  }
+  
+  .evaluation-confirmed h4 {
+    margin-bottom: 5px;
+  }
+  
+  //Added new value
+  .align-mandatory{
+    .mandatory{    
+      position: absolute;
+      top: 0;
+      left: 162px;
+      font-size: 22px;
+      color: crimson;
+    }
+  }

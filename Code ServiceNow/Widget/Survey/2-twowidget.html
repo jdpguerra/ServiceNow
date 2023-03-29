@@ -1,0 +1,112 @@
+<div class="panel template" ng-if="data.canTakeSurvey && data.showSurvey">
+  <div class="panel-body">
+    <div ng-switch="c.firstRatingDone" class="text-center">
+      <h4 ng-switch-default>
+        ${Satisfaction Survey - Evaluate the service}  
+      </h4>
+
+      <div ng-switch-when="true">
+
+        <!-- Shows when the form is submitted -->
+        <div ng-switch="c.evaluationConfirmed">
+          <p ng-switch-default>
+            ${Satisfaction Survey - Service}
+          </p>
+
+          <p ng-switch-when="true">
+            ${Satisfaction Survey - Evaluation confirmed}
+          </p>
+        </div>
+
+        <h4 class="evaluation-value">
+          {{c.valueText}}
+        </h4>
+      </div>
+    </div>
+
+    <div class="rating" ng-show="!c.evaluationConfirmed">
+      <!-- 5 stars -->
+      <input type="radio" id="star5" name="rating-detail" ng-model="c.value" value="5">
+      <label class="star" for="star5" title="${Satisfaction Survey - Outstanding}"></label>
+
+      <!-- 4 stars -->
+      <input type="radio" id="star4" name="rating-detail" ng-model="c.value" value="4">
+      <label class="star" for="star4" title="${Satisfaction Survey - Good}"></label>
+
+      <!-- 3 stars -->
+      <input type="radio" id="star3" name="rating-detail" ng-model="c.value" value="3">
+      <label class="star" for="star3" title="${Satisfaction Survey - Satisfactory}"></label>
+
+      <!-- 2 stars -->
+      <input type="radio" id="star2" name="rating-detail" ng-model="c.value" value="2">
+      <label class="star" for="star2" title="${Satisfaction Survey - Poor}"></label>
+
+      <!-- 1 star -->
+      <input type="radio" id="star1" name="rating-detail" ng-model="c.value" value="1">
+      <label class="star" for="star1" title="${Satisfaction Survey - Very poor}"></label>
+    </div>
+
+    <div ng-if="c.firstRatingDone && !c.evaluationConfirmed">
+      <hr>
+      <form class="improvements" ng-submit="c.confirmEvaluation()">
+
+        <div class="text-center m-b-lg">
+
+          <div ng-if="c.value < 5">
+            ${Satisfaction Survey - What can we improve?}  
+          </div>
+          <div ng-if="c.value == 5">
+            ${Satisfaction Survey - What did you like most?}  
+          </div>
+
+          <div ng-repeat="question in data.questions track by question.id" ng-if="question.type == 'checkbox'">
+            <input id="{{question.formId}}" type="checkbox" ng-model="c.improvement[question.id]" ng-change="c.resetValidation('option')" class="improvement-checkbox">
+            <label for="{{question.formId}}" class="improvement-option">{{question.question}}</label>            
+          </div>
+
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+
+            <div ng-repeat="question in data.questions track by question.id" ng-if="question.type == 'string'" class="align-mandatory">
+              <input id="{{question.formId}}" type="checkbox" ng-model="c.improvement[question.id]" ng-change="c.resetValidation('option')" class="improvement-checkbox">
+              <label for="{{question.formId}}" class="improvement-option">{{question.question}}</label>  
+              <!--Added new value-->
+              <div ng-show="question.mandatory" class="mandatory">*</div>
+
+              <div  class="form-group" ng-if="c.toggleInput(question.id)">
+                <label>{{question.question}}:</label>
+                <input type="text" class="form-control" ng-model="c.textInputs[question.id]" ng-change="c.resetValidation('input')"/>
+              </div> 
+            </div>
+
+            <p class="error" ng-if="c.selectOption">${Satisfaction Survey - Please select at least one option}.</p>
+            <p class="error" ng-if="c.fillInput">${Satisfaction Survey - Please fill all fields}.</p>
+
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <!--Added new value-->
+            <button ng-disabled="c.verfifyDisabled()" type="submit" name="done" class="btn btn-primary btn-lg">
+              ${Satisfaction Survey - Done}
+            </button>    
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="panel template" ng-if="data.surveyAlreadyTaken">
+  <div class="panel-body text-center evaluation-confirmed">
+    <p>
+      ${Satisfaction Survey - Evaluation confirmed}
+    </p>
+    <h4 class="evaluation-value">
+      ${Satisfaction Survey - Thank you!}
+    </h4>
+  </div>
+</div>
