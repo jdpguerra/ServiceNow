@@ -39,3 +39,4 @@
 
 //Copy field to multirow
 //UR>  https://www.servicenow.com/community/developer-articles/solved-issue-with-mrvs-multi-row-variable-set-accessing-the-form/ta-p/2319347
+//UR>  https://www.servicenow.com/community/developer-articles/solved-issue-with-mrvs-multi-row-variable-set-accessing-the-form/ta-p/2319347
