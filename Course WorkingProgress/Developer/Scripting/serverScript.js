@@ -112,3 +112,22 @@ gs.info("Returned record count = " + myObj.getRowCount());
 
 //GlideDateTime
 //URL > https://developer.servicenow.com/dev.do#!/reference/api/tokyo/server/c_APIRef
+//GlideDateTime
+// rightnow stores the current time
+var rightnow = new GlideDateTime();
+// Create a GlideDateTime object for the When needed date
+var whenNeeded = new GlideDateTime(current.u_when_needed);
+
+// If the When needed date is before rightnow, do not write the record to the database
+// Output an error message to the screen
+if(whenNeeded.before(rightnow)){
+  gs.addErrorMessage("When needed date cannot be in the past.  Your request has not been saved to the database.");
+  current.setAbortAction(true);
+}
+
+//Debugging Business Rules
+gs.info("The value of the Short description field is " + short_description);
+gs.warn("The value of the Short description field is " + short_description);
+gs.error("The value of the Short description field is " + short_description);
+gs.debug("The value of the Short description field is " + short_description); // must be enabled
+
