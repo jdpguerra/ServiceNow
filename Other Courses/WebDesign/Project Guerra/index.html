@@ -95,6 +95,16 @@
 
 console.log("teste");
 
+1-var gr = new GlideRecord("incident");
+2-gr.addQuery('active', true);
+3-gr.query();
+4-while(gr.next()){
+5-  gs.infoMessage("Testando codigo");
+6-   gs.infoMessage("Temos numero do incident "+number); 
+7-}
+
+console.log("teste");
+
 var gr = new GlideRecord("sc_req_item");
 gr.addQuery('active', true);
 gr.query();
